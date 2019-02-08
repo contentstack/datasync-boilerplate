@@ -1,0 +1,23 @@
+{
+  "name": "contentstack-sync-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "clean": "rimraf _contents .tokens",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "contentstack-asset-store-filesystem": "file:modules/contentstack-asset-store-filesystem-1.0.0.tgz",
+    "contentstack-content-store-filesystem": "file:modules/contentstack-content-store-filesystem-1.0.0.tgz",
+    "contentstack-content-store-mongodb": "file:./modules/contentstack-content-store-mongodb-1.0.0.tgz",
+    "contentstack-sync-manager": "file:modules/contentstack-sync-manager-1.0.0.tgz",
+    "contentstack-webhook-listener": "file:./modules/contentstack-webhook-listener-1.0.0.tgz"
+  },
+  "devDependencies": {
+    "rimraf": "^2.6.2"
+  },
+  "author": "",
+  "license": "ISC"
+}
