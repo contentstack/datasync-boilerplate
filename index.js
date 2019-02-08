@@ -1,11 +1,9 @@
 
-const environment = process.env.NODE_ENV || 'development'
-
 const contentStoreName = 'contentstack-content-store-filesystem'
 const assetStore = require('contentstack-asset-store-filesystem')
 const listener = require('contentstack-webhook-listener')
 const syncManager = require('contentstack-sync-manager')
-const config = require('./config/'+environment);
+const config = require('./config/default.js')
 
 if(config.contentStore && config.contentStore.name) {
   contentStoreName = config.contentStore.name
