@@ -1,12 +1,12 @@
 {
   "name": "contentstack-sync-boilerplate",
   "version": "1.0.0",
-  "description": "",
+  "description": "Contentstack sync utility boilerplate",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "clean": "rimraf _contents .tokens",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm run build && node dist/index",
+    "build": "npm run clean && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
+    "clean": "rimraf dist/ .ledger .token unprocessible/"
   },
   "dependencies": {
     "contentstack-asset-store-filesystem": "file:modules/contentstack-asset-store-filesystem-1.0.0.tgz",
@@ -16,8 +16,11 @@
     "contentstack-webhook-listener": "file:./modules/contentstack-webhook-listener-1.0.0.tgz"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^5.14.1",
     "rimraf": "^2.6.2"
   },
-  "author": "",
+  "author": "Contentstack Ecosystem",
   "license": "ISC"
 }

@@ -1,20 +1,32 @@
+import { existsSync } from 'fs'
+import { join } from 'path'
+import { merge } from 'lodash'
+import { setConfig, setAssetStore, setContentStore, setListener, start } from 'contentstack-sync-manager'
+import { config } from './config'
 
-const contentStoreName = 'contentstack-content-store-filesystem'
-const assetStore = require('contentstack-asset-store-filesystem')
-const listener = require('contentstack-webhook-listener')
-const syncManager = require('contentstack-sync-manager')
-const config = require('./config/default.js')
+const listener = require(config.listenerModule)
+const assetStore = require(config.assetStoreModule)
 
-if(config.contentStore && config.contentStore.name) {
-  contentStoreName = config.contentStore.name
+const contentStore = require(config.contentStoreModule)
+
+const env = process.env.NODE_ENV
+
+let envConfig
+if (existsSync(join(__dirname, env + '.js'))) {
+  envConfig = require(join(__dirname, 'config', env + '.js'))
+} else {
+  envConfig = require(join(__dirname, 'config', 'development'))
 }
-const contentStore = require(contentStoreName || 'contentstack-content-store-filesystem')
 
-syncManager.setConfig(config)
-syncManager.setAssetConnector(assetStore)
-syncManager.setContentConnector(contentStore)
-syncManager.setListener(listener)
+const appConfig = merge(config, envConfig)
 
-syncManager.start().then(messages => {
-  console.log('Application started successfully.')
-}).catch(console.error)
+setConfig(appConfig)
+setAssetStore(assetStore)
+setContentStore(contentStore)
+setListener(listener)
+
+start()
+  .then(() => {
+    console.log('Contentstack sync utility started successfully!')
+  })
+  .catch(console.error)
