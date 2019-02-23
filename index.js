@@ -18,7 +18,7 @@ if (existsSync(join(__dirname, env + '.js'))) {
   envConfig = require(join(__dirname, 'config', 'development'))
 }
 
-const appConfig = merge(config, envConfig)
+const appConfig = merge(config, envConfig.config)
 
 setConfig(appConfig)
 setAssetStore(assetStore)
