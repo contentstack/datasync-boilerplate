@@ -12,8 +12,8 @@ const contentStore = require(config.contentStoreModule)
 const env = process.env.NODE_ENV
 
 let envConfig
-if (existsSync(join(__dirname, env + '.js'))) {
-  envConfig = require(join(__dirname, 'config', env + '.js'))
+if (existsSync(join(__dirname, 'config', env + '.js'))) {
+  envConfig = require(join(__dirname, 'config', env))
 } else {
   envConfig = require(join(__dirname, 'config', 'development'))
 }
