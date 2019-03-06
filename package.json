@@ -15,7 +15,8 @@
     "contentstack-content-store-filesystem": "file:modules/contentstack-content-store-filesystem-1.0.0.tgz",
     "contentstack-content-store-mongodb": "file:./modules/contentstack-content-store-mongodb-1.0.0.tgz",
     "contentstack-sync-manager": "file:modules/contentstack-sync-manager-1.0.0.tgz",
-    "contentstack-webhook-listener": "file:./modules/contentstack-webhook-listener-1.0.0.tgz"
+    "contentstack-webhook-listener": "file:./modules/contentstack-webhook-listener-1.0.0.tgz",
+    "newrelic": "^5.6.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
