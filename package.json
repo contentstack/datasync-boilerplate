@@ -4,9 +4,11 @@
   "description": "Contentstack sync utility boilerplate",
   "main": "index.js",
   "scripts": {
+    "continue": "node dist/index",
     "start": "npm run build && node dist/index",
     "build": "npm run clean && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
-    "clean": "rimraf dist/ .ledger .token unprocessible/"
+    "clean": "rimraf dist/ .ledger .token .checkpoint unprocessible/",
+    "node-debugger": "npm run build && node --inspect dist/index"
   },
   "dependencies": {
     "contentstack-asset-store-filesystem": "file:modules/contentstack-asset-store-filesystem-1.0.0.tgz",
