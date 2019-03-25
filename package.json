@@ -1,21 +1,21 @@
 {
-  "name": "contentstack-sync-boilerplate",
-  "version": "1.0.0",
-  "description": "Contentstack sync utility boilerplate",
+  "name": "datasync-boilerplate",
+  "version": "0.0.1-rc.1",
+  "description": "A boilerplate that has the code skeleton to help you get up and running with Contentstack DataSync.",
   "main": "index.js",
   "scripts": {
     "continue": "node dist/index",
     "start": "npm run build && node dist/index",
-    "build": "npm run clean && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
+    "build": "babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
     "clean": "rimraf dist/ .ledger .token .checkpoint unprocessible/",
     "node-debugger": "npm run build && node --inspect dist/index"
   },
   "dependencies": {
-    "contentstack-asset-store-filesystem": "file:modules/contentstack-asset-store-filesystem-1.0.0.tgz",
-    "contentstack-content-store-filesystem": "file:modules/contentstack-content-store-filesystem-1.0.0.tgz",
-    "contentstack-content-store-mongodb": "file:./modules/contentstack-content-store-mongodb-1.0.0.tgz",
-    "contentstack-sync-manager": "file:modules/contentstack-sync-manager-1.0.0.tgz",
-    "contentstack-webhook-listener": "file:./modules/contentstack-webhook-listener-1.0.0.tgz"
+    "@contentstack/datasync-asset-store-filesystem": "0.0.1-rc.1",
+    "@contentstack/datasync-content-store-filesystem": "0.0.1-rc.1",
+    "@contentstack/datasync-content-store-mongodb": "0.0.1-rc.1",
+    "@contentstack/datasync-manager": "0.0.1-rc.1",
+    "@contentstack/webhook-listener": "0.0.1-rc.1"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -23,6 +23,10 @@
     "eslint": "^5.14.1",
     "rimraf": "^2.6.2"
   },
-  "author": "Contentstack Ecosystem",
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/contentstack/datasync-boilerplate"
+  },
+  "author": "Contentstack LLC <support@contentstack.com>",
+  "license": "MIT"
 }
