@@ -1,7 +1,7 @@
 import { existsSync } from 'fs'
 import { join } from 'path'
 import { merge } from 'lodash'
-import { setConfig, setAssetStore, setContentStore, setListener, start } from 'contentstack-sync-manager'
+import { setConfig, setAssetStore, setContentStore, setListener, start } from '@contentstack/datasync-manager'
 import { config } from './config'
 
 const listener = require(config.listenerModule)
