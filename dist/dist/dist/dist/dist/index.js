@@ -6,7 +6,7 @@ var _path = require('path');
 
 var _lodash = require('lodash');
 
-var _datasyncManager = require('@contentstack/datasync-manager');
+var _contentstackSyncManager = require('contentstack-sync-manager');
 
 var _config = require('./config');
 
@@ -26,11 +26,11 @@ if ((0, _fs.existsSync)((0, _path.join)(__dirname, 'config', env + '.js'))) {
 
 var appConfig = (0, _lodash.merge)(_config.config, envConfig.config);
 
-(0, _datasyncManager.setConfig)(appConfig);
-(0, _datasyncManager.setAssetStore)(assetStore);
-(0, _datasyncManager.setContentStore)(contentStore);
-(0, _datasyncManager.setListener)(listener);
+(0, _contentstackSyncManager.setConfig)(appConfig);
+(0, _contentstackSyncManager.setAssetStore)(assetStore);
+(0, _contentstackSyncManager.setContentStore)(contentStore);
+(0, _contentstackSyncManager.setListener)(listener);
 
-(0, _datasyncManager.start)().then(function () {
+(0, _contentstackSyncManager.start)().then(function () {
   console.log('Contentstack sync utility started successfully!');
 }).catch(console.error);
