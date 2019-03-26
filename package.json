@@ -1,6 +1,6 @@
 {
   "name": "datasync-boilerplate",
-  "version": "0.0.1-rc.1",
+  "version": "0.0.1",
   "description": "A boilerplate that has the code skeleton to help you get up and running with Contentstack DataSync.",
   "main": "index.js",
   "scripts": {
@@ -11,11 +11,11 @@
     "node-debugger": "npm run build && node --inspect dist/index"
   },
   "dependencies": {
-    "@contentstack/datasync-asset-store-filesystem": "0.0.1-rc.1",
-    "@contentstack/datasync-content-store-filesystem": "0.0.1-rc.1",
-    "@contentstack/datasync-content-store-mongodb": "0.0.1-rc.1",
-    "@contentstack/datasync-manager": "0.0.1-rc.1",
-    "@contentstack/webhook-listener": "0.0.1-rc.1"
+    "@contentstack/datasync-asset-store-filesystem": "0.0.1",
+    "@contentstack/datasync-content-store-filesystem": "0.0.1",
+    "@contentstack/datasync-content-store-mongodb": "0.0.1",
+    "@contentstack/datasync-manager": "0.0.1",
+    "@contentstack/webhook-listener": "0.0.1"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
