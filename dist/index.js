@@ -34,3 +34,13 @@ var appConfig = (0, _lodash.merge)(_config.config, envConfig.config);
 (0, _datasyncManager.start)().then(function () {
   console.log('Contentstack sync utility started successfully!');
 }).catch(console.error);
+
+_datasyncManager.notifications.on('publish', function (obj) {
+  // console.log('SYNC-PUBLISH: ', obj)
+}).on('unpublish', function (obj) {
+  // console.log('SYNC-UNPUBLISH: ', obj)
+}).on('delete', function (obj) {
+  // console.log('SYNC-DELETE: ', obj)
+}).on('error', function (obj) {
+  // console.log('SYNC-ERROR: ', obj)
+});
