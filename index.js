@@ -1,7 +1,7 @@
 import { existsSync } from 'fs'
 import { join } from 'path'
 import { merge } from 'lodash'
-import { setConfig, setAssetStore, setContentStore, setListener, start } from '@contentstack/datasync-manager'
+import { setConfig, setAssetStore, setContentStore, setListener, start, notifications } from '@contentstack/datasync-manager'
 import { config } from './config'
 
 const listener = require(config.listenerModule)
@@ -30,3 +30,18 @@ start()
     console.log('Contentstack sync utility started successfully!')
   })
   .catch(console.error)
+
+
+  notifications
+  .on('publish', (obj) => {
+    // console.log('SYNC-PUBLISH: ', obj)
+  })
+  .on('unpublish', (obj) => {
+    // console.log('SYNC-UNPUBLISH: ', obj)
+  })
+  .on('delete', (obj) => {
+    // console.log('SYNC-DELETE: ', obj)
+  })
+  .on('error', (obj) => {
+    // console.log('SYNC-ERROR: ', obj)
+  })
