@@ -3,7 +3,7 @@ export const config = {
   assetStoreModule: '@contentstack/datasync-asset-store-filesystem',
   listenerModule: '@contentstack/webhook-listener',
   contentstack: {
-    apiKey: '***REMOVED***',
-    deliveryToken: '***REMOVED***'
+    apiKey: '',
+    deliveryToken: ''
   },
 }
