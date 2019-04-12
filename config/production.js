@@ -1,4 +1,4 @@
-export const config = {
+const config = {
   // The following keys, can be edited in contentstack-content-store-mongodb.
   // contentStore: {
   //   // Name of the mongodb database to store in
@@ -54,3 +54,5 @@ export const config = {
   //   url: 'mongodb://localhost:27017',
   // }
 }
+
+module.exports = config

@@ -1,8 +1,8 @@
-import { existsSync } from 'fs'
-import { join } from 'path'
-import { merge } from 'lodash'
-import { setConfig, setAssetStore, setContentStore, setListener, start, notifications } from '@contentstack/datasync-manager'
-import { config } from './config'
+const fs = require('fs')
+const path = require('path')
+const lodash = require('lodash')
+const datasyncManager = require('@contentstack/datasync-manager')
+const config = require('./config')
 
 const listener = require(config.listenerModule)
 const assetStore = require(config.assetStoreModule)
@@ -12,27 +12,27 @@ const contentStore = require(config.contentStoreModule)
 const env = process.env.NODE_ENV
 
 let envConfig
-if (existsSync(join(__dirname, 'config', env + '.js'))) {
-  envConfig = require(join(__dirname, 'config', env))
+if (fs.existsSync(path.join(__dirname, 'config', env + '.js'))) {
+  envConfig = require(path.join(__dirname, 'config', env))
 } else {
-  envConfig = require(join(__dirname, 'config', 'development'))
+  envConfig = require(path.join(__dirname, 'config', 'development'))
 }
 
-const appConfig = merge(config, envConfig.config)
+const appConfig = lodash.merge(config, envConfig.config)
 
-setConfig(appConfig)
-setAssetStore(assetStore)
-setContentStore(contentStore)
-setListener(listener)
+datasyncManager.setConfig(appConfig)
+datasyncManager.setAssetStore(assetStore)
+datasyncManager.setContentStore(contentStore)
+datasyncManager.setListener(listener)
 
-start()
+datasyncManager.start()
   .then(() => {
     console.log('Contentstack sync utility started successfully!')
   })
   .catch(console.error)
 
 
-  notifications
+  datasyncManager.notifications
   .on('publish', (obj) => {
     // console.log('SYNC-PUBLISH: ', obj)
   })

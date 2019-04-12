@@ -1,4 +1,4 @@
-export const config = {
+const config = {
   contentStoreModule: '@contentstack/datasync-content-store-filesystem',
   assetStoreModule: '@contentstack/datasync-asset-store-filesystem',
   listenerModule: '@contentstack/webhook-listener',
@@ -7,3 +7,5 @@ export const config = {
     deliveryToken: ''
   },
 }
+
+module.exports = config
