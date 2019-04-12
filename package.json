@@ -4,11 +4,9 @@
   "description": "A boilerplate that has the code skeleton to help you get up and running with Contentstack DataSync.",
   "main": "index.js",
   "scripts": {
-    "continue": "node dist/index",
-    "start": "npm run build && node dist/index",
-    "build": "npm run clean && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
-    "clean": "rimraf dist/ .ledger .token .checkpoint unprocessible/",
-    "node-debugger": "npm run build && node --inspect dist/index"
+    "continue": "node index.js",
+    "start": "node index.js",
+    "clean": "rimraf .ledger .token .checkpoint unprocessible/"
   },
   "dependencies": {
     "@contentstack/datasync-asset-store-filesystem": "file:contentstack/contentstack-datasync-asset-store-filesystem-0.1.0.tgz",
@@ -18,8 +16,6 @@
     "@contentstack/webhook-listener": "0.0.1"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
     "eslint": "^5.14.1",
     "rimraf": "^2.6.2"
   },
