@@ -2,7 +2,7 @@ const fs = require('fs')
 const path = require('path')
 const lodash = require('lodash')
 const datasyncManager = require('@contentstack/datasync-manager')
-const config = require('./config')
+const config = require('./config/all')
 
 const listener = require(config.listenerModule)
 const assetStore = require(config.assetStoreModule)
