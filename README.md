@@ -29,24 +29,26 @@ This boilerplate is a code skeleton that will help you get up and running with C
 
 ### Configuration
 
-Add following configurations to config/index.js file:
+Add following configurations to config/all.js or to your config/{{environment-name}}.js file:
 ```js
 module.exports = {
     contentstack: {
         apiKey: '<<YOUR API KEY>>',
-        token: '<<DELIVERY TOKEN>>'
+        token: '<<DELIVERY TOKEN>>',
     },
-   contentStoreModule: '<<ADD YOUR MODULE>>'
+   contentStoreModule: '<<MODULE NAME>>',
+   assetStoreModule: '<<MODULE NAME>>',
+   listenerModule: '<<MODULE NAME>>'
 }
 ```
-**For MongoDB:**
-```js
-contentStoreModule: '@contentstack/datasync-content-store-mongodb'
-```
-**For Filesystem:**
-```js
-contentStoreModule: '@contentstack/datasync-content-store-filesystem'
-```
+The following content store modules are available
+- [@contentstack/datasync-content-store-filesystem](https://github.com/contentstack/datasync-content-store-filesystem)
+- [@contentstack/datasync-content-store-mongodb](https://github.com/contentstack/datasync-content-store-mongodb)
+- [@contentstack/datasync-content-store-s3](https://github.com/contentstack/datasync-content-store-s3)
+
+The following asset store modules are available
+- [@contentstack/datasync-asset-store-filesystem](https://github.com/contentstack/datasync-asset-store-filesystem)
+- [@contentstack/datasync-asset-store-s3](https://github.com/contentstack/datasync-asset-store-aws-s3)
 
 ### Install all dependencies
 ```cmd
@@ -58,7 +60,6 @@ npm install
 ```
 
 ## Further Reading
-
 - [Getting started with Contentstack DataSync](https://www.contentstack.com/docs/guide/synchronization/contentstack-datasync)
 - [Contentstack DataSync](https://www.contentstack.com/docs/guide/synchronization/contentstack-datasync/configuration-files-for-contentstack-datasync) doc lists the configuration for different modules
 
