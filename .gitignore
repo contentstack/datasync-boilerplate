@@ -2,6 +2,6 @@ _contents
 unprocessible
 .ledger
 .token
+.checkpoint
 package-lock.json
-config/staging.js
 node_modules
