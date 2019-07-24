@@ -27,21 +27,7 @@ datasyncManager.setListener(listener)
 
 datasyncManager.start()
   .then(() => {
-    console.log('Contentstack sync utility started successfully!')
+    console.log('Boilerplate: DataSync started successfully!')
   })
   .catch(console.error)
-
-
-  datasyncManager.notifications
-  .on('publish', (obj) => {
-    // console.log('SYNC-PUBLISH: ', obj)
-  })
-  .on('unpublish', (obj) => {
-    // console.log('SYNC-UNPUBLISH: ', obj)
-  })
-  .on('delete', (obj) => {
-    // console.log('SYNC-DELETE: ', obj)
-  })
-  .on('error', (obj) => {
-    // console.log('SYNC-ERROR: ', obj)
-  })
+  
