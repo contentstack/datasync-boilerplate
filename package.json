@@ -16,7 +16,7 @@
     "@contentstack/webhook-listener": "file:modules/contentstack-webhook-listener-1.0.0.tgz"
   },
   "devDependencies": {
-    "eslint": "6.0.1",
+    "eslint": "^6.1.0",
     "rimraf": "2.6.3"
   },
   "repository": {
