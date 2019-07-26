@@ -1,15 +1,27 @@
 const fs = require('fs')
 const path = require('path')
-const lodash = require('lodash')
+const _ = require('lodash')
 const datasyncManager = require('@contentstack/datasync-manager')
 const config = require('./config/all')
-
+/**
+ * Listener module. Currently Contentstack offers
+ * - @contentstack/webhook-listener
+ */
 const listener = require(config.listenerModule)
+/**
+ * Asset store module. Currently Contentstack offers
+ * - @contentstack/datasync-asset-store-filesystem
+ */
 const assetStore = require(config.assetStoreModule)
-
+/**
+ * Content store module. Currently Contentstack offers
+ * - @contentstack/datasync-content-store-filesystem (To query contents synced via filesystem, you can use https://github.com/contentstack/datasync-filesystem-sdk)
+ * - @contentstack/datasync-content-store-mongodb (To query contents synced via mongodb, you can use https://github.com/contentstack/datasync-mongodb-sdk)
+ */
 const contentStore = require(config.contentStoreModule)
 
-const env = process.env.NODE_ENV
+// Set application's environment
+const env = process.env.NODE_ENV || config.environment || 'development'
 
 let envConfig
 if (fs.existsSync(path.join(__dirname, 'config', env + '.js'))) {
@@ -18,7 +30,7 @@ if (fs.existsSync(path.join(__dirname, 'config', env + '.js'))) {
   envConfig = require(path.join(__dirname, 'config', 'development'))
 }
 
-const appConfig = lodash.merge(config, envConfig.config)
+const appConfig = _.merge(config, envConfig)
 
 datasyncManager.setConfig(appConfig)
 datasyncManager.setAssetStore(assetStore)
