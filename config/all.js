@@ -1,6 +1,6 @@
 const config = {
   // Make sure you have all the modules mentioned below installed
-  contentStoreModule: '@contentstack/datasync-content-store-filesystem',
+  contentStoreModule: '@contentstack/datasync-content-store-mongodb',
   assetStoreModule: '@contentstack/datasync-asset-store-filesystem',
   listenerModule: '@contentstack/webhook-listener',
   contentstack: {
@@ -9,6 +9,10 @@ const config = {
     // Your stack's environment based delivery token. (Goto Contentstack Dashboard -> Settings dropdown -> Tokens -> Generate tokens)
     deliveryToken: '',
   },
+  contentStore: {
+    dbName: 'test-db',
+    
+  },
   plugins: [
     // Plugins starting with _cs_internal_ are app specific internal plugins
     // If you have custom plugins
@@ -16,8 +20,9 @@ const config = {
     //  2. Create a folder inside it
     //  3. Inside the folder, create a index.js file
     // Check example - plugins/dummy-plugin of this project
+    
     {
-      disabled: true,
+      disabled: false,
       name: 'item-logger',
       options: {
         // Here, you can set your own custom logger
