@@ -1,17 +1,13 @@
 const config = {
   // Make sure you have all the modules mentioned below installed
-  contentStoreModule: '@contentstack/datasync-content-store-mongodb',
+  contentStoreModule: '@contentstack/datasync-content-store-filesystem',
   assetStoreModule: '@contentstack/datasync-asset-store-filesystem',
   listenerModule: '@contentstack/webhook-listener',
   contentstack: {
-    // Your stack's API key
-    apiKey: '',
-    // Your stack's environment based delivery token. (Goto Contentstack Dashboard -> Settings dropdown -> Tokens -> Generate tokens)
-    deliveryToken: '',
-  },
-  contentStore: {
-    dbName: 'test-db',
-    
+       // Your stack's API key
+       apiKey: '',
+       // Your stack's environment based delivery token. (Goto Contentstack Dashboard -> Settings dropdown -> Tokens -> Generate tokens)
+       deliveryToken: '',
   },
   plugins: [
     // Plugins starting with _cs_internal_ are app specific internal plugins
