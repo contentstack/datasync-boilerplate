@@ -8,6 +8,7 @@ const config = {
        apiKey: '',
        // Your stack's environment based delivery token. (Goto Contentstack Dashboard -> Settings dropdown -> Tokens -> Generate tokens)
        deliveryToken: '',
+       host: 'dev-cdn.contentstack.io'
   },
   plugins: [
     // Plugins starting with _cs_internal_ are app specific internal plugins
