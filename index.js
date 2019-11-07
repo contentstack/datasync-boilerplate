@@ -42,4 +42,12 @@ datasyncManager.start()
     console.log('Boilerplate: DataSync started successfully!')
   })
   .catch(console.error)
-  
+
+datasyncManager.notifications
+  .on('webhookBasedSync', () => {
+    console.log('WebhookBased Sync was completed successfully !!')
+  }) 
+  .on('initialSync', ()=>{
+    console.log('Initial Sync was completed successfully !!')
+  })
+ 
