@@ -13,7 +13,7 @@
     "@contentstack/datasync-content-store-filesystem": "1.0.1",
     "@contentstack/datasync-content-store-mongodb": "1.0.1",
     "@contentstack/webhook-listener": "1.0.0",
-    "@contentstack/datasync-manager": "1.0.1"
+    "@contentstack/datasync-manager": "1.1.0"
   },
   "devDependencies": {
     "eslint": "^6.1.0",
