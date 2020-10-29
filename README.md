@@ -44,11 +44,9 @@ module.exports = {
 The following content store modules are available
 - [@contentstack/datasync-content-store-filesystem](https://github.com/contentstack/datasync-content-store-filesystem)
 - [@contentstack/datasync-content-store-mongodb](https://github.com/contentstack/datasync-content-store-mongodb)
-- [@contentstack/datasync-content-store-s3](https://github.com/contentstack/datasync-content-store-s3)
 
 The following asset store modules are available
 - [@contentstack/datasync-asset-store-filesystem](https://github.com/contentstack/datasync-asset-store-filesystem)
-- [@contentstack/datasync-asset-store-s3](https://github.com/contentstack/datasync-asset-store-aws-s3)
 
 ### Install all dependencies
 ```cmd
