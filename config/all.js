@@ -8,6 +8,11 @@ const config = {
        apiKey: '',
        // Your stack's environment based delivery token. (Goto Contentstack Dashboard -> Settings dropdown -> Tokens -> Generate tokens)
        deliveryToken: '',
+       // add a host based on your region
+       //(For NA Region) host: 'https://api.contentstack.com/v3',
+       //(For EU Region) host: 'https://eu-api.contentstack.com/v3',
+       //(For AZURE NA Region) host: 'https://azure-na-api.contentstack.com/v3',
+       host:'',
   },
   plugins: [
     // Plugins starting with _cs_internal_ are app specific internal plugins
