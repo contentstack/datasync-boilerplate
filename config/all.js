@@ -9,9 +9,9 @@ const config = {
        // Your stack's environment based delivery token. (Goto Contentstack Dashboard -> Settings dropdown -> Tokens -> Generate tokens)
        deliveryToken: '',
        // add a host based on your region
-       //(For NA Region) host: 'https://api.contentstack.com/v3',
-       //(For EU Region) host: 'https://eu-api.contentstack.com/v3',
-       //(For AZURE NA Region) host: 'https://azure-na-api.contentstack.com/v3',
+       //(For NA Region) host: 'cdn.contentstack.io',
+       //(For EU Region) host: 'eu-cdn.contentstack.com',
+       //(For AZURE NA Region) host: 'azure-na-cdn.contentstack.com',
        host:'',
   },
   plugins: [
