@@ -6,14 +6,17 @@
   "scripts": {
     "continue": "node index.js",
     "start": "npm run clean && node index.js",
-    "clean": "rimraf .ledger .token .checkpoint unprocessible/"
+    "clean": "rimraf .ledger .token .checkpoint unprocessible/",
+    "prepublish": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "dependencies": {
     "@contentstack/datasync-asset-store-filesystem": "1.0.0",
     "@contentstack/datasync-content-store-filesystem": "1.0.1",
     "@contentstack/datasync-content-store-mongodb": "1.0.1",
     "@contentstack/webhook-listener": "1.0.0",
-    "@contentstack/datasync-manager": "1.2.0"
+    "@contentstack/datasync-manager": "1.2.0",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "eslint": "^6.1.0",
@@ -24,5 +27,6 @@
     "url": "https://github.com/contentstack/datasync-boilerplate"
   },
   "author": "Contentstack LLC <support@contentstack.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "snyk": true
 }
