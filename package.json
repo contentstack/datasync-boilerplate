@@ -9,15 +9,15 @@
     "clean": "rimraf .ledger .token .checkpoint unprocessible/"
   },
   "dependencies": {
-    "@contentstack/datasync-asset-store-filesystem": "1.0.0",
-    "@contentstack/datasync-content-store-filesystem": "1.0.1",
-    "@contentstack/datasync-content-store-mongodb": "1.0.1",
-    "@contentstack/webhook-listener": "1.0.0",
-    "@contentstack/datasync-manager": "1.2.0"
+    "@contentstack/datasync-asset-store-filesystem": "^1.0.0",
+    "@contentstack/datasync-content-store-filesystem": "^1.0.1",
+    "@contentstack/datasync-content-store-mongodb": "^1.0.1",
+    "@contentstack/webhook-listener": "^1.0.0",
+    "@contentstack/datasync-manager": "^1.2.2"
   },
   "devDependencies": {
-    "eslint": "^6.1.0",
-    "rimraf": "2.6.3"
+    "eslint": "^8.20.0",
+    "rimraf": "^3.0.2"
   },
   "repository": {
     "type": "git",
