@@ -35,6 +35,7 @@ module.exports = {
     contentstack: {
         apiKey: '<<YOUR API KEY>>',
         token: '<<DELIVERY TOKEN>>',
+        host: '<<HOST>>'
     },
    contentStoreModule: '<<MODULE NAME>>',
    assetStoreModule: '<<MODULE NAME>>',
