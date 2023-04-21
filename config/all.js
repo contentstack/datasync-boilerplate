@@ -12,6 +12,7 @@ const config = {
        //(For NA Region) host: 'cdn.contentstack.io',
        //(For EU Region) host: 'eu-cdn.contentstack.com',
        //(For AZURE NA Region) host: 'azure-na-cdn.contentstack.com',
+       //(For AZURE EU Region) host: 'azure-eu-cdn.contentstack.com',
        host:'',
   },
   plugins: [
