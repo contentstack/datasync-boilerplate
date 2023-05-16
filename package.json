@@ -12,7 +12,7 @@
     "@contentstack/datasync-asset-store-filesystem": "^2.0.1",
     "@contentstack/datasync-content-store-filesystem": "^2.0.2",
     "@contentstack/datasync-content-store-mongodb": "^1.0.3",
-    "@contentstack/webhook-listener": "^1.0.2",
+    "@contentstack/webhook-listener": "^1.0.3",
     "@contentstack/datasync-manager": "^2.0.1"
   },
   "devDependencies": {
