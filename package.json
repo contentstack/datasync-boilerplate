@@ -1,6 +1,6 @@
 {
   "name": "datasync-boilerplate",
-  "version": "1.2.6",
+  "version": "1.2.5",
   "description": "A boilerplate that has the code skeleton to help you get up and running with Contentstack DataSync.",
   "main": "index.js",
   "scripts": {
