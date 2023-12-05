@@ -55,6 +55,9 @@ const config = {
 //     },
 //     // mongodb connection url
 //     url: 'mongodb://localhost:27017',
+
+  // Flag to preserve asset uid in the referenced entries, When a new asset version is published.(preserveAssetInReferencedEntries: true)
+  //preserveAssetInReferencedEntries: false
 //   }
 }
 
