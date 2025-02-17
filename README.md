@@ -10,7 +10,7 @@ This boilerplate is a code skeleton that will help you get up and running with C
 
 ### Prerequisite
 
-- Node.js 8 or above
+- Node.js 20 or above
 - ngrok for running it on the local system
 - A webhook already set up as follows:
     - Make your contentstack-webhook-listener server available publicly (For local environment, use ngrok)
