@@ -25,7 +25,7 @@ if (!appConfig.checkpoint?.preserve) {
 }
 
 pathsToDelete.forEach((fileOrDir) => {
-  const fullPath = path.join(__dirname, "..", fileOrDir);
+  const fullPath = path.join(__dirname, fileOrDir);
   if (fs.existsSync(fullPath)) {
     rimraf.sync(fullPath);
     console.log("Deleted:", fileOrDir);
