@@ -32,6 +32,17 @@ if (fs.existsSync(path.join(__dirname, "config", env + ".js"))) {
 
 const appConfig = _.merge(config, envConfig);
 
+// Optional checkpoint reading
+if (appConfig.checkpoint?.enabled) {
+  const checkpointPath = path.join(__dirname, appConfig.checkpoint.filePath || ".checkpoint");
+  const checkPoint = readHiddenFile(checkpointPath);
+  if (checkPoint) {
+    console.log("Found sync token in checkpoint file:", checkPoint);
+    appConfig.contentstack.sync_token = checkPoint.token;
+    console.log("Using sync token:", appConfig.contentstack.sync_token);
+  }
+}
+
 datasyncManager.setConfig(appConfig);
 datasyncManager.setAssetStore(assetStore);
 datasyncManager.setContentStore(contentStore);
@@ -45,3 +56,16 @@ datasyncManager
   .catch((error) => {
     console.error(error);
   });
+
+function readHiddenFile(filePath) {
+  try {
+    if (!fs.existsSync(filePath)) {
+      console.error("File does not exist:", filePath);
+      return;
+    }
+    const data = fs.readFileSync(filePath, "utf8"); 
+    return JSON.parse(data); 
+  } catch (err) {
+    console.error("Error reading file:", err?.message);
+  }
+}
