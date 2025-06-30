@@ -12,6 +12,7 @@ const config = {
        //(For NA Region) host: 'cdn.contentstack.io',
        //(For EU Region) host: 'eu-cdn.contentstack.com',
        //(For AZURE NA Region) host: 'azure-na-cdn.contentstack.com',
+       //(For GCP NA Region) host: 'gcp-na-cdn.contentstack.com',
        host:'',
   },
   plugins: [
@@ -68,6 +69,11 @@ const config = {
       },
     },
   ],
+  checkpoint: {
+    enabled: false, // Set to true if you want to enable checkpoint
+    filePath: ".checkpoint",
+    preserve: false // Set to true if you want to preserve the checkpoint file during clean operation
+  },
 }
 
 module.exports = config
