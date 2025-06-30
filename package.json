@@ -1,19 +1,19 @@
 {
   "name": "datasync-boilerplate",
-  "version": "1.2.10",
+  "version": "1.3.0",
   "description": "A boilerplate that has the code skeleton to help you get up and running with Contentstack DataSync.",
   "main": "index.js",
   "scripts": {
     "continue": "node index.js",
     "start": "npm run clean && node index.js",
-    "clean": "rimraf .ledger .token .checkpoint unprocessible/"
+    "clean": "node clean.js"
   },
   "dependencies": {
-    "@contentstack/datasync-asset-store-filesystem": "~2.1.0",
+    "@contentstack/datasync-asset-store-filesystem": "~2.2.0",
     "@contentstack/datasync-content-store-filesystem": "~2.1.0",
     "@contentstack/datasync-content-store-mongodb": "~1.0.8",
     "@contentstack/datasync-manager": "~2.0.7",
-    "@contentstack/webhook-listener": "~1.0.5"
+    "@contentstack/webhook-listener": "~1.0.7"
   },
   "devDependencies": {
     "eslint": "^8.36.0",
