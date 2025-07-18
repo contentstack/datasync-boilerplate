@@ -49,6 +49,12 @@ The following content store modules are available
 The following asset store modules are available
 - [@contentstack/datasync-asset-store-filesystem](https://github.com/contentstack/datasync-asset-store-filesystem)
 
+### Environment Variables
+
+| Variable     | Description                                         | Default         |
+|--------------|-----------------------------------------------------|-----------------|
+| NODE_ENV     | Sets the application environment                    | development     |
+
 ### Install all dependencies
 ```cmd
 npm install
