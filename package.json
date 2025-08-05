@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@contentstack/datasync-asset-store-filesystem": "~2.2.0",
-    "@contentstack/datasync-content-store-filesystem": "~2.1.0",
+    "@contentstack/datasync-content-store-filesystem": "~2.1.6",
     "@contentstack/datasync-content-store-mongodb": "~1.0.8",
     "@contentstack/datasync-manager": "~2.0.7",
     "@contentstack/webhook-listener": "~1.0.7"
