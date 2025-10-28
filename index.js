@@ -3,6 +3,7 @@ const path = require("path");
 const _ = require("lodash");
 const datasyncManager = require("@contentstack/datasync-manager");
 const config = require("./config/all");
+const messages = require("./messages");
 /**
  * Listener module. Currently Contentstack offers
  * - @contentstack/webhook-listener
@@ -37,9 +38,9 @@ if (appConfig.checkpoint?.enabled) {
   const checkpointPath = path.join(__dirname, appConfig.checkpoint.filePath || ".checkpoint");
   const checkPoint = readHiddenFile(checkpointPath);
   if (checkPoint) {
-    console.log("Found sync token in checkpoint file:", checkPoint);
+    console.log(messages.sync.tokenFound(checkPoint));
     appConfig.contentstack.sync_token = checkPoint.token;
-    console.log("Using sync token:", appConfig.contentstack.sync_token);
+    console.log(messages.sync.usingToken(appConfig.contentstack.sync_token));
   }
 }
 
@@ -51,21 +52,21 @@ datasyncManager.setListener(listener);
 datasyncManager
   .start()
   .then(() => {
-    console.log("Boilerplate: DataSync started successfully!");
+    console.log(messages.sync.startSuccess());
   })
   .catch((error) => {
-    console.error(error);
+    console.error(messages.sync.error(error));
   });
 
 function readHiddenFile(filePath) {
   try {
     if (!fs.existsSync(filePath)) {
-      console.error("File does not exist:", filePath);
+      console.error(messages.file.notExist(filePath));
       return;
     }
     const data = fs.readFileSync(filePath, "utf8"); 
     return JSON.parse(data); 
   } catch (err) {
-    console.error("Error reading file:", err?.message);
+    console.error(messages.file.readError(err?.message));
   }
 }
