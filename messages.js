@@ -12,7 +12,7 @@ module.exports = {
 
   // Index/Main application messages
   sync: {
-    tokenFound: (checkpoint) => `Sync token found in the checkpoint file: ${checkpoint}`,
+    tokenFound: (checkpoint) => `Sync token found in the checkpoint file: ${JSON.stringify(checkpoint)}`,
     usingToken: (token) => `Using sync token: ${token}`,
     startSuccess: () => `Boilerplate: Data sync started successfully.`,
     error: (error) => `An error occurred: ${error}`,
