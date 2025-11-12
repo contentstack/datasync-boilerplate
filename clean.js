@@ -4,6 +4,7 @@ const path = require("path");
 const rimraf = require("rimraf");
 const config = require("./config/all");
 const { merge } = require("lodash");
+const messages = require("./messages");
 
 // Set application's environment
 const env = process.env.NODE_ENV || config.environment || "development";
@@ -28,8 +29,8 @@ pathsToDelete.forEach((fileOrDir) => {
   const fullPath = path.join(__dirname, fileOrDir);
   if (fs.existsSync(fullPath)) {
     rimraf.sync(fullPath);
-    console.log("Deleted:", fileOrDir);
+    console.log(messages.clean.deleted(fileOrDir));
   } else {
-    console.log("Not found (skipped):", fileOrDir);
+    console.log(messages.clean.notFound(fileOrDir));
   }
 });
