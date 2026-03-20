@@ -10,14 +10,14 @@
   },
   "dependencies": {
     "@contentstack/datasync-asset-store-filesystem": "^2.3.3",
-    "@contentstack/datasync-content-store-filesystem": "^2.1.8",
+    "@contentstack/datasync-content-store-filesystem": "^2.1.10",
     "@contentstack/datasync-content-store-mongodb": "^1.0.12",
-    "@contentstack/datasync-manager": "^2.3.0",
+    "@contentstack/datasync-manager": "^2.4.0-beta.1",
     "@contentstack/webhook-listener": "^1.1.2"
   },
   "devDependencies": {
     "eslint": "^8.57.1",
-    "rimraf": "^4.4.0"
+    "rimraf": "^4.4.1"
   },
   "repository": {
     "type": "git",
